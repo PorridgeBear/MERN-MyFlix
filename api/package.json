@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-  "type": "module",
   "scripts": {
     "test": "NODE_ENV=test jest --testTimeout=10000",
     "start": "node server.bundle.js",
