@@ -5,6 +5,9 @@
 * Network calls to the API are separated into a services directory to make testing easier
 * I've chosen to use function components for e.g. `Videos`, `Video` and hooks e.g. `useEffect` for networking invocation
 
+# Progress
+
+![](progress-220706-home.png)
 
 # Getting Started with Create React App
 
