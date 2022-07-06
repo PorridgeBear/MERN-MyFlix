@@ -16,6 +16,7 @@ describe('Movie APIs', () => {
         expect(res.type).toEqual(expect.stringContaining('json'));
         expect(res.body).toHaveProperty('movies')
         
+        // Expect that movies contain the right data properties
         let firstMovie = res.body['movies'][0];
         let movieProps = ['id', 'title', 'synopsis', 'tags', 'released', 'director', 'poster'];
         movieProps.map((prop) => {
