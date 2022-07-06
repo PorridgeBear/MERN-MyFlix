@@ -56,4 +56,8 @@ There's a handy built-in story map template to get going
 
 # Iterations
 
-TBC
+Using a Github project with a view per version:
+
+## V1
+
+https://github.com/users/PorridgeBear/projects/1/views/1
