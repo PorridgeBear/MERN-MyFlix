@@ -1,3 +1,11 @@
+# MyFlix UI
+
+* The UI was created using the Create React App script initially - the original README contents below.
+* I've used the React Bootstrap library to use Bootstrap in a more React-like component fashion
+* Network calls to the API are separated into a services directory to make testing easier
+* I've chosen to use function components for e.g. `Videos`, `Video` and hooks e.g. `useEffect` for networking invocation
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
