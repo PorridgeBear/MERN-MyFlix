@@ -13,6 +13,12 @@ Netflix is my feature set inspiration as it covers a broad range of common requi
 * Caching
 * Media handling (upload, streaming, thumbnailing) and CDN usage
 
+# Other READMEs
+
+* [API](api/README.md)
+* [UI](ui/README.md)
+* [Data](data/README.md)
+
 # Architecture
 
 The project employs API-driven frontend architecture.
