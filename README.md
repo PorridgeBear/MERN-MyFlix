@@ -52,7 +52,7 @@ There's a handy built-in story map template to get going
 
 ## V1
 
-![Data Model V1](data-model-v1%403x.png)
+![Data Model V1](data-model-v1@3x.jpg)
 
 # Iterations
 
