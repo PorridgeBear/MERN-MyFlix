@@ -5,7 +5,7 @@ const app = express();
 const port = 3080;
 
 // TODO: move to a database
-const videos = {
+const movies = {
     "movies": [
       {"title": "Chaser", "tags": ["Short", "Drama", "Romance"], "released": "2013", "director": "Sal Bardo", "synopsis": "Alienated from his conservative Jewish family and community, a gay schoolteacher seeks solace in New York's barebacking scene.", "poster": "https://xl.movieposterdb.com/14_03/2013/2387421/xl_2387421_c25a4e4a.jpg", "id": "9b07aab07b5fa3f77e5d1f86c9a43b97"},
       {"title": "Summer Fantasy", "tags": [], "released": "1984", "director": "Noel Nosseck", "synopsis": "", "poster": "https://xl.movieposterdb.com/22_07/1984/88201/xl_88201_f4ac28ac.jpg", "id": "3f79e4112a1f1c7e5c7d1bcc926afb1d"},
@@ -77,7 +77,7 @@ app.use(bodyParser.json());
  */
 app.get('/api/movies', (req, res) => {
     console.log('api/movies request');
-    res.json(videos);
+    res.json(movies);
   });
 
 const server = app.listen(port, () => {
