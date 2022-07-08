@@ -68,8 +68,15 @@ There's a handy built-in story map template to get going:
 
 ## 22/7/22: initial movie grid and movie grid cell component
 
+I ended up using Bootstrap 5 and React Bootstrap to neatly use Bootstrap within the JSX. The grid here supports different numbers of movie cells per row depending on device, e.g. on mobile just 2 per row.
+
 ![](progress-220707-grid.png)
 
 ## 23/7/22: initial movie details modal
+
+A few challenges to solve for here:
+
+* Selecting a movie - when to show the modal and when to close it. The current movie selection I decided belonged most naturally to the grid component, and I use the approach of passing callback functions to components to allow e.g. for each movie cell to notify the parent grid that it has become the selected movie
+* The posters are all portrait which does not work super well as a lot of horizontal scrolling is needed. For now I chose to crop the portrait image in the modal to appear landscape, but I think I will need to find an alternate source of posters
 
 ![](progress-220708-details.png)
