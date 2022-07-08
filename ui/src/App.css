@@ -1,0 +1,8 @@
+.movie-details-poster {
+    background-size: contain;
+    height: 150pt;
+    overflow: hidden;
+}
+.movie-details-poster img {
+    width: 100%;
+}

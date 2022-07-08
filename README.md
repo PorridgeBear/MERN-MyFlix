@@ -40,27 +40,9 @@ The story map is a nice way to think of the system from the user journey perspec
 
 I like to think about the data model early on, and will create a rough entity relationship diagram (ERD) for what I think will underpin all features.
 
-## Iterations
+## Tracking work
 
 I'll then get into a rhythm of implementing deliverable iterations following the story map release slices.
-
-# Story Map
-
-I created a Miro board and pulled in some screen captures of the Netflix films area which will form the basis of my  feature set.
-
-## V1
-
-There's a handy built-in story map template to get going
-
-![Story Map V1](user-story-map-v1%403x.png)
-
-# Data Model
-
-## V1
-
-![Data Model V1](data-model-v1@3x.jpg)
-
-# Iterations
 
 I've used a private Github project board to track my progress:
 
@@ -69,3 +51,25 @@ I've used a private Github project board to track my progress:
 I realised after having implemented the movies list functionality that the board supports pairing cards to Github project issues which I felt would be better aligned to professional development, where an issue can be described and labeled, given a milestone, and made into a pull request for review if needed. Whilst the project is only personal, it's good to practice these organisational practices, too.
 
 ![Board](project-issue.png)
+
+# Story Map
+
+I created a Miro board and pulled in some screen captures of the Netflix films area which will form the basis of my  feature set.
+
+There's a handy built-in story map template to get going:
+
+![Story Map V1](user-story-map-v1%403x.png)
+
+# Data Model
+
+![Data Model V1](data-model-v1@3x.jpg)
+
+# Progress
+
+## 22/7/22: initial movie grid and movie grid cell component
+
+![](progress-220707-grid.png)
+
+## 23/7/22: initial movie details modal
+
+![](progress-220708-details.png)
