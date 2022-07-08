@@ -62,8 +62,6 @@ There's a handy built-in story map template to get going
 
 # Iterations
 
-Using a Github project with a view per version:
+I am using a private Github project board to track my progress
 
-## V1
-
-https://github.com/users/PorridgeBear/projects/1/views/1
+![Board](project-board.png)
