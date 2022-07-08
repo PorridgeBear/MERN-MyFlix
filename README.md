@@ -62,6 +62,10 @@ There's a handy built-in story map template to get going
 
 # Iterations
 
-I am using a private Github project board to track my progress
+I've used a private Github project board to track my progress:
 
 ![Board](project-board.png)
+
+I realised after having implemented the movies list functionality that the board supports pairing cards to Github project issues which I felt would be better aligned to professional development, where an issue can be described and labeled, given a milestone, and made into a pull request for review if needed. Whilst the project is only personal, it's good to practice these organisational practices, too.
+
+![Board](project-issue.png)
