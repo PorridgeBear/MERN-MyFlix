@@ -83,7 +83,7 @@ A few challenges to solve for here:
 
 ## 12/07/22: initial movie details modal
 
-* Needed to implement a new spider against a new data source 
+* Needed to implement a new spider against a new data source to provide for cast
 * Now displays multiple directors, cast members, genres all as lists for now and rating which is unable to be scraped at present so I have used a randomising function in the spider to provide a random rating for now
 
 ![](progress-220712-details.png)
