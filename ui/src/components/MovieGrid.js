@@ -43,7 +43,7 @@ function Movies() {
       {/* <div className='col-12'>
         {!isFetching && <p>There are {movies.length} movies.</p>}
       </div> */}
-      {movies.map((movie) => (
+      {movies.map(movie => (
         <MovieGridCell 
           key={movie.id} 
           id={movie.id} 

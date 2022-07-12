@@ -17,15 +17,35 @@ function MovieDetails ({ deselectMovie, movie }) {
         <div className='movie-details-poster'><img alt={movie.title} src={movie.poster} /></div>
         <div className='row'>
           <div className='col-6'>
-            <p>{movie.released}</p>
+            <p>Released: {movie.released}, Rating: {movie.rating}</p>
             <p>{movie.synopsis}</p>
           </div>
           <div className='col-6'>
             <dl>
-              <dt>Director</dt>
-              <dd>{movie.director}</dd>
+              <dt>Director(s)</dt>
+              <dd>
+                <ul>
+                {movie.directors.map(director => (
+                    <li>{director}</li>
+                ))}
+                </ul>
+              </dd>
               <dt>Genres</dt>
-              <dd>{movie.genres}</dd>
+              <dd>
+                <ul>
+                {movie.genres.map(genre => (
+                    <li>{genre}</li>
+                ))}
+                </ul>
+              </dd>
+              <dt>Cast</dt>
+              <dd>
+                <ul>
+                {movie.cast.map(castMember => (
+                    <li>{castMember}</li>
+                ))}
+                </ul>
+              </dd>
             </dl>
           </div>
         </div>

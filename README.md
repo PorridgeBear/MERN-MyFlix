@@ -66,13 +66,13 @@ There's a handy built-in story map template to get going:
 
 # Progress
 
-## 22/7/22: initial movie grid and movie grid cell component
+## 07/07/22: initial movie grid and movie grid cell component
 
 I ended up using Bootstrap 5 and React Bootstrap to neatly use Bootstrap within the JSX. The grid here supports different numbers of movie cells per row depending on device, e.g. on mobile just 2 per row.
 
 ![](progress-220707-grid.png)
 
-## 23/7/22: initial movie details modal
+## 08/07/22: initial movie details modal
 
 A few challenges to solve for here:
 
@@ -80,3 +80,10 @@ A few challenges to solve for here:
 * The posters are all portrait which does not work super well as a lot of horizontal scrolling is needed. For now I chose to crop the portrait image in the modal to appear landscape, but I think I will need to find an alternate source of posters
 
 ![](progress-220708-details.png)
+
+## 12/07/22: initial movie details modal
+
+* Needed to implement a new spider against a new data source 
+* Now displays multiple directors, cast members, genres all as lists for now and rating which is unable to be scraped at present so I have used a randomising function in the spider to provide a random rating for now
+
+![](progress-220712-details.png)
