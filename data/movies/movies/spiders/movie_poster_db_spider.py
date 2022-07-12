@@ -2,12 +2,12 @@ from hashlib import md5
 import scrapy 
 
 
-class MoviesSpider(scrapy.Spider):
+class MoviePosterDBSpider(scrapy.Spider):
 	"""Use the Movie Poster DB front page to extract some sample movie data """
 
 	base_url = 'https://www.movieposterdb.com'
 
-	name = 'movies'
+	name = 'movies_posterdb'
 	start_urls = [base_url]
 
 	def parse(self, response):
