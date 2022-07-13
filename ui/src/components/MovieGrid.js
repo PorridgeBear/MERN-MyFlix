@@ -12,7 +12,7 @@ function Movies() {
   const [selectedMovie, setSelectedMovie] = useState();
 
   useEffect(() => {
-    fetchMovies();    
+    fetchMovies();
   }, []);
 
   const fetchMovies = () => {
@@ -44,12 +44,12 @@ function Movies() {
         {!isFetching && <p>There are {movies.length} movies.</p>}
       </div> */}
       {movies.map(movie => (
-        <MovieGridCell 
-          key={movie.id} 
-          id={movie.id} 
-          title={movie.title} 
-          poster={movie.poster} 
-          selectMovie={selectMovie} 
+        <MovieGridCell
+          key={movie.id}
+          id={movie.id}
+          title={movie.title}
+          poster={movie.poster}
+          selectMovie={selectMovie}
         />
       ))}
       <MovieDetails movie={selectedMovie} deselectMovie={deselectMovie} />

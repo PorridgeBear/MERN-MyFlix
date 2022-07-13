@@ -3,8 +3,8 @@ import { Container, Modal } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css'
 
-function MovieDetails ({ deselectMovie, movie }) {
-  if (! movie) {
+function MovieDetails({ deselectMovie, movie }) {
+  if (!movie) {
     return null;
   }
 
@@ -25,31 +25,31 @@ function MovieDetails ({ deselectMovie, movie }) {
               <dt>Director(s)</dt>
               <dd>
                 <ul>
-                {movie.directors.map(director => (
+                  {movie.directors.map(director => (
                     <li>{director}</li>
-                ))}
+                  ))}
                 </ul>
               </dd>
               <dt>Genres</dt>
               <dd>
                 <ul>
-                {movie.genres.map(genre => (
+                  {movie.genres.map(genre => (
                     <li>{genre}</li>
-                ))}
+                  ))}
                 </ul>
               </dd>
               <dt>Cast</dt>
               <dd>
                 <ul>
-                {movie.cast.map(castMember => (
+                  {movie.cast.map(castMember => (
                     <li>{castMember}</li>
-                ))}
+                  ))}
                 </ul>
               </dd>
             </dl>
           </div>
         </div>
-        
+
       </Modal.Body>
     </Modal>
   )
