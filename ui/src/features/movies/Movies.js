@@ -1,13 +1,22 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import MovieGridCell from './MovieGridCell'
-import MovieDetails from './MovieDetails'
-import { getMovies } from '../api/MoviesService';
+import MovieDetails from '../movieDetails/MovieDetails'
+import { load, selectMovies } from './moviesSlice';
+import { getMovies } from '../../api/MoviesService';
 
+
+function Movie({ selectMovie, id, title, poster }) {
+  return <div className='col-6 pb-4 col-md-3 col-lg-2' onClick={() => selectMovie(id)}>
+    <img alt={title} src={poster} className='w-100' />
+  </div>
+}
 
 function Movies() {
 
-  const [movies, setMovies] = useState([]);
+  const movies = useSelector(selectMovies);
+  const dispatch = useDispatch();
+
   const [isFetching, setIsFetching] = useState(false);
   const [selectedMovie, setSelectedMovie] = useState();
 
@@ -24,13 +33,13 @@ function Movies() {
 
     getMovies()
       .then(movies => {
-        setMovies(movies['movies']);
+        dispatch(load(movies));
         setIsFetching(false);
       });
   };
 
   const selectMovie = (id) => {
-    let movie = movies.find(movie => movie.id == id);
+    let movie = movies.find(movie => movie.id === id);
     setSelectedMovie(movie);
   }
 
@@ -44,7 +53,7 @@ function Movies() {
         {!isFetching && <p>There are {movies.length} movies.</p>}
       </div> */}
       {movies.map(movie => (
-        <MovieGridCell
+        <Movie
           key={movie.id}
           id={movie.id}
           title={movie.title}

@@ -1,7 +1,6 @@
 import React from 'react';
-import { Container, Modal } from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../App.css'
 
 function MovieDetails({ deselectMovie, movie }) {
   if (!movie) {
@@ -26,7 +25,7 @@ function MovieDetails({ deselectMovie, movie }) {
               <dd>
                 <ul>
                   {movie.directors.map(director => (
-                    <li>{director}</li>
+                    <li key={director}>{director}</li>
                   ))}
                 </ul>
               </dd>
@@ -34,7 +33,7 @@ function MovieDetails({ deselectMovie, movie }) {
               <dd>
                 <ul>
                   {movie.genres.map(genre => (
-                    <li>{genre}</li>
+                    <li key={genre}>{genre}</li>
                   ))}
                 </ul>
               </dd>
@@ -42,7 +41,7 @@ function MovieDetails({ deselectMovie, movie }) {
               <dd>
                 <ul>
                   {movie.cast.map(castMember => (
-                    <li>{castMember}</li>
+                    <li key={castMember}>{castMember}</li>
                   ))}
                 </ul>
               </dd>
