@@ -22,13 +22,29 @@ Therefore I implemented a new spider against Cine Materials which is a better si
 
 Like the previous spider, it was possible to obtain the basic movie data relatively straighforwardly. An interesting challenge came with the poster images. These are held on a separate page and I applied a map/reduce approach to selecting a single landscape poster. 
 
-As it turns out, given the user uploads required, not all movies have landscape images, so I have ended up with a mix of landscape and portrait images. More work needs doing here. 
+## The Movie DB (TMDB)
+
+During testing following Cine Material scraping, I found not all movies on Cine Material have landscape images so the grid layout appeared worse due to inconsistent heights mixing.
+
+Further searching, I managed to find another source of movie data and posters with an API! TMDB is excellent, with a rich API for searching movie and TV data. It is always preferable to extract data using an API than it is to scrape. For now though, to make progress on other features, I decided to leave the Cine Material data scrape and to create a separate script to use the TMDB API to extract a landscape oriented poster. 
 
 # Running
 
-These are yielded from the spider, so crawling is saved to JSON;
+There are two parts to producing a final set of data that can be used by the `api` part of this project.
+
+## Cine Material 
 
     cd movies
     scrapy crawl movies_cine -O movies.json
 
-This data is used at the moment by the API in-code to facilitate UI implementation. Later a movies database will be created.
+## get_posters.py
+
+The `get_posters` script using plain `requests` to make a search call to the API with the movie title and release year. Being able to supply a release year to the API search was inspired, and I was able to use these 2 pieces of information to, broadly, get 1 hit to obtain an accurate poster. Where there were a couple, I take the first result relying on TMDB's relevancy ranking design based on an exact title match. TMDB requires an API key. To avoid committing this in git, I've used a `data/.env`.
+
+  get_posters.py ./movies/movies.json
+
+This will output `movies_with_posters.json`
+
+## Copy to api/server.js
+
+At the moment I copy `movies_with_posters.json` to `api/server.js` to facilitate faster initial UI implementation. This will be moved to a database.
