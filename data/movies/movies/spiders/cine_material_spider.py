@@ -2,14 +2,14 @@ from curses import meta
 import functools
 import random
 import uuid
-import scrapy 
+import scrapy
 
 
 def get_rating() -> str:
     """ Return a random rating as a stop-gap until we find a bonafide data source """
     bbfc_ratings = ['U', 'PG', '12', '12A', '15', '18']
     return random.choice(bbfc_ratings)
-    
+
 
 class CineMaterialSpider(scrapy.Spider):
     """Use the Cine Material 2022 page to extract some sample movie data """
@@ -25,14 +25,14 @@ class CineMaterialSpider(scrapy.Spider):
         for movie_link in movie_links:
             movie_posters_page = f'{self.base_url}{movie_link}'
             movie_page = f'{movie_posters_page}/info'
-            
+
             print(movie_posters_page, movie_page)
             yield scrapy.Request(
-                url=movie_page, 
-                callback=self.parse_movie_page, 
+                url=movie_page,
+                callback=self.parse_movie_page,
                 meta={'movie_posters_page': movie_posters_page}
             )
-    
+
     def parse_movie_page(self, response):
             """ Parse a movie page """
 
@@ -48,8 +48,8 @@ class CineMaterialSpider(scrapy.Spider):
             }
 
             yield scrapy.Request(
-                url=response.meta['movie_posters_page'], 
-                callback=self.parse_movie_poster_url, 
+                url=response.meta['movie_posters_page'],
+                callback=self.parse_movie_poster_url,
                 meta={'movie_data': movie_data}
             )
 
@@ -84,8 +84,8 @@ class CineMaterialSpider(scrapy.Spider):
 
         landscape_pick = functools.reduce(dims_reducer, poster_resolutions)
         landscape_pick_search_text = f'{landscape_pick[0]}*{landscape_pick[1]} px'
-        
-        # Finish by locating a single image URL, note the search may find multiple, so only use get to use first            
+
+        # Finish by locating a single image URL, note the search may find multiple, so only use get to use first
         poster_url = response.xpath(f"//span[contains(text(), '{landscape_pick_search_text}')]/parent::span/preceding-sibling::img/@data-src").get()
 
         # The thumbnail URL is returned but replacing with 500x we get a large enough version - full size is not
